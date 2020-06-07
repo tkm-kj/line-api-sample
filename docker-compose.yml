@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  ap:
+    build: .
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - '3307:3306'
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=password'
+      - 'MYSQL_DATABASE=dev_db'
+    volumes:
+      - datadir:/var/lib/mysql
+volumes:
+  bundle:
+  datadir:
