@@ -66,6 +66,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
+    line-bot-api (1.14.1)
     loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -136,6 +137,7 @@ PLATFORMS
 
 DEPENDENCIES
   faraday
+  line-bot-api
   mysql2
   puma
   rails (= 6.0.3.1)

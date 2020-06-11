@@ -11,3 +11,5 @@ gem 'mysql2'
 gem 'puma'
 
 gem 'faraday'
+
+gem 'line-bot-api'

@@ -3,7 +3,7 @@ class CallbackController < ApplicationController
     admin = Admin.find(params[:admin_id])
 
     # stateが異なっていたら例外を出す
-    raise Line::InvalidState if params[:state] != session[:state]
+    raise Line::InvalidState unless params[:state] == session[:state]
 
     line_user_id = Line::Api::Oauth.new(admin).line_user_id(params[:code])
     User.create!(line_user_id: line_user_id)
