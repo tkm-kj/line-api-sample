@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_06_07_142147) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "line_user_id", null: false
+    t.string "line_user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
