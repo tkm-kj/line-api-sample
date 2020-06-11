@@ -2,6 +2,11 @@ version: '3.8'
 services:
   ap:
     build: .
+    command: bin/rails s -b 0.0.0.0
+    ports:
+      - '3000:3000'
+    environment:
+      - 'HOST=449500f88b21.ngrok.io' # ngrokで生成された値に変える
     volumes:
       - .:/app
       - bundle:/usr/local/bundle
