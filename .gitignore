@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+.envrc
 
 # Ignore all logfiles and tempfiles.
 /log/*
