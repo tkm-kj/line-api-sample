@@ -7,7 +7,8 @@ module Line
     def call(event)
       user = User.find_by(line_user_id: event['source']['userId'])
 
-      Message.create!(sendable: user, receivable: @admin, text: event.message['text']) if user.present?
+      resource = MessageText.new(content: event.message['text'])
+      Message.create!(sendable: user, receivable: @admin, resource: resource) if user.present?
     end
   end
 end

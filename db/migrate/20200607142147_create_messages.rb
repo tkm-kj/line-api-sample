@@ -5,7 +5,8 @@ class CreateMessages < ActiveRecord::Migration[6.0]
       t.string :sendable_type, null: false
       t.bigint :receivable_id, null: false
       t.string :receivable_type, null: false
-      t.text :text
+      t.bigint, :resource_id, null: false
+      t.string, :resource_type, null: false
 
       t.timestamps
     end

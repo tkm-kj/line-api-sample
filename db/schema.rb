@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_07_142147) do
+ActiveRecord::Schema.define(version: 2020_06_14_043639) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "line_messaging_id", null: false
@@ -22,14 +22,21 @@ ActiveRecord::Schema.define(version: 2020_06_07_142147) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "message_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "sendable_id", null: false
     t.string "sendable_type", null: false
     t.bigint "receivable_id", null: false
     t.string "receivable_type", null: false
-    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "resource_id", null: false
+    t.string "resource_type", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
