@@ -12,6 +12,7 @@ class WebhookController < ApplicationController
     events.each do |event|
       case event
       when Line::Bot::Event::Message
+        Line::SaveReceivedMessage.new(admin).call(event)
       end
     end
 
