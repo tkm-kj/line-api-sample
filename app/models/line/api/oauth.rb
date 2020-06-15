@@ -11,7 +11,8 @@ module Line::Api
         redirect_uri: callback_uri,
         state: state,
         scope: 'openid',
-        prompt: 'consent' # NOTE: 必ずLINE認証を許可するようにするオプション
+        prompt: 'consent', # 必ずLINE認証を許可するようにするオプション
+        bot_prompt: 'aggressive' # ログイン後に連携した公式アカウントと友だちになるか聞く画面を出してくれる
       }
 
       # NOTE: https://developers.line.biz/ja/docs/line-login/integrate-line-login/#making-an-authorization-request
